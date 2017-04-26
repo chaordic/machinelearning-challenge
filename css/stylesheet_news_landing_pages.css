@@ -1,0 +1,153 @@
+body {
+  background: url(../img/BG_LandingPage.jpg) no-repeat fixed center;
+  background-size: cover;
+  font-family: dosis, sans-serif;
+}
+
+h2 {
+  font-size: 24pt;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #321946;
+  text-align: center;
+}
+
+h3 {
+  font-size: 17pt;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+p {
+  font-family: Roboto, sans-serif;
+  font-size: 10pt;
+  font-weight: 400;
+  color: #321946;
+}
+
+hr {
+  margin-top: 70px;
+}
+
+section {
+  padding: 0 9%;
+  margin-bottom: 70px;
+}
+
+.coral {
+  color: #dc5f3c!important;
+}
+
+.green {
+  color: #96af5f!important;
+}
+
+.sand {
+  color: #ceaa97!important;
+}
+
+.body-margin {
+  max-width: 700px;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.mail-body {
+  background-color: white;
+  display: block;
+}
+
+.header {
+  width: 100%;
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+.logo {
+  height: 80px;
+  float: left;
+}
+
+.product {
+  height: 60px;
+  float: right;
+  padding-top: 15px;
+}
+
+.orange-box {
+  height: 10px;
+  width: 100%;
+  background-color: #ff9200;
+}
+.gray-box {
+  height: 10px;
+  width: 100%;
+  background-color: darkgray;
+  margin-bottom: 100px;
+}
+
+.section-header {
+  margin-bottom: 30px;
+}
+
+.chamada {
+  font-family: roboto, sans-serif;
+  font-weight: 500;
+  font-size: 10pt;
+  color: #321946;
+  line-height: 12pt;
+  display: block
+}
+
+.first-phrase {
+  color: #dc5f3c;
+  font-weight: 600;
+  display: inline;
+  float: left;
+  margin-right: 3px;
+}
+
+.chamada-img {
+  height: 72px;
+  float: left;
+  margin-right: 15px;
+  padding-top: 10px;
+}
+
+.nav-img{
+  height: 60px;
+  padding-top: 0;
+}
+
+.hot-img{
+  padding-top: 5px;
+}
+
+.how-to {
+  height: 20px;
+  margin-top: 5px;
+}
+
+.illustration {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.orange {
+  color: #dc5f3c;
+}
+
+.highlight-box{
+  background-color: #d5dfbf;
+  padding: 15px;
+  font-family: roboto, sans-serif;
+  font-size: 10pt;
+  color: #321946;
+}
+
+@media only screen and (max-width:700px) {
+  .chamada{
+    display:block;
+  }
+}
