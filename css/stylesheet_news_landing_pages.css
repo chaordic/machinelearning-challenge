@@ -1,5 +1,6 @@
-body {
-  /*font-family: dosis, sans-serif;*/
+
+h1 {
+  font-family: dosis, sans-serif;
 }
 
 h2 {
@@ -16,6 +17,7 @@ h3 {
   font-weight: 300;
   text-transform: uppercase;
   margin: 0;
+  font-family: dosis, sans-serif;
 }
 
 p {
