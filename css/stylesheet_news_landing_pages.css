@@ -180,7 +180,7 @@ section {
 }
 
 .contato-quad-formulario-select {
-    -webkit-appearance: none;
+    /*-webkit-appearance: none;*/
     -moz-appearance: none;
     background: none;
     font-family: Roboto, sans-serif;
@@ -188,9 +188,10 @@ section {
     width: 100%;
     height: 100%;
     line-height: 39px;
-    border: 0;
+    /*border: 0;*/
+    height: 39px;
     outline: 0;
-    color: #999;
+    color: #372040;
 }
 
 select {
@@ -209,6 +210,7 @@ select {
 }
 
 input, textarea, keygen, select, button {
+    background-color: buttonface;
     text-rendering: auto;
     color: initial;
     letter-spacing: normal;
@@ -237,4 +239,43 @@ select:not(:-internal-list-box) {
 
 keygen, select {
     border-radius: 5px;
+}
+#progress_bar {
+  margin: 10px 0;
+  padding: 3px;
+  border: 1px solid #000;
+  font-size: 14px;
+  clear: both;
+  /*opacity: 0;
+  -moz-transition: opacity 1s linear;
+  -o-transition: opacity 1s linear;
+  -webkit-transition: opacity 1s linear;*/
+}
+#progress_bar.loading {
+  opacity: 1.0;
+}
+#progress_bar .percent {
+  background-color: #FF9200;
+  height: auto;
+  width: 0;
+}
+
+#progress_bar2 {
+  margin: 10px 0;
+  padding: 3px;
+  border: 1px solid #000;
+  font-size: 14px;
+  clear: both;
+  /*opacity: 0;
+  -moz-transition: opacity 1s linear;
+  -o-transition: opacity 1s linear;
+  -webkit-transition: opacity 1s linear;*/
+}
+#progress_bar2.loading {
+  opacity: 1.0;
+}
+#progress_bar2 .percent {
+  background-color: #FF9200;
+  height: auto;
+  width: 0;
 }
