@@ -162,7 +162,7 @@ section {
     font-family: Roboto, sans-serif;
     font-weight: 200;
     font-size: 13px !important;
-    color: #fff;
+    /*color: #fff;*/
     box-sizing: border-box;
 }
 
@@ -175,7 +175,7 @@ section {
     font-family: Roboto, sans-serif;
     font-weight: 200;
     font-size: 13px !important;
-    color: #fff;
+    /*color: #fff;*/
     box-sizing: border-box;
     background: #fff
 }
@@ -223,10 +223,7 @@ input, textarea, keygen, select, button {
     text-align: start;
     margin: 0em 0em 0em 0em;
     font: 13.3333px Arial;
-}
-
-select:not([size]):not([multiple]), select[size="0"], select[size="1"] {
-    /*background-color: buttonface;*/
+}.contato-quad-formulario*/
 }
 
 keygen, select, select[size="0"], select[size="1"] {

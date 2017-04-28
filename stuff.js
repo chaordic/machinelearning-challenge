@@ -111,16 +111,24 @@ function send2AWSLambda(json) {
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function(data) {
-            // Ensure that the progress bar displays 100% at the end.
-            progress2.style.width = '100%';
-            progress2.textContent = "Sending response (DONE)";
-            setTimeout("document.getElementById('progress_bar2').className='';", 100);
-
+            window.chaordic.data = data
             //show number of attempts remaining for today.
-            document.getElementById("attempts").innerHTML = "You have <b>" + data["attempts"] + "</b> attempts left for today!"
+            if( data.error && data.error==="no-email"){
+                document.getElementById("attempts").innerHTML = "We need your email!"
+            }
+            else{
 
-            // show missclassification error.
-            document.getElementById("missclassificationerror").innerHTML = "You scored <br><br><br><font size='12'><b>" + String(100*data["score"]) + "%</font></b>"
+                // Ensure that the progress bar displays 100% at the end.
+                progress2.style.width = '100%';
+                progress2.textContent = "Sending response (DONE)";
+                setTimeout("document.getElementById('progress_bar2').className='';", 100);
+                
+                
+                // show missclassification error and attempts.
+                document.getElementById("attempts").innerHTML = "You have <b>" + data["attempts_left"] + "</b> attempts left for today!"
+                document.getElementById("missclassificationerror").innerHTML = "You scored <br><br><br><font size='12'><b>" + String(100*data["score"]) + "%</font></b>"
+            }
+
 
         }
     });
