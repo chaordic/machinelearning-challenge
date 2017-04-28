@@ -162,7 +162,7 @@ section {
     font-family: Roboto, sans-serif;
     font-weight: 200;
     font-size: 13px !important;
-    color: #333;
+    color: #fff;
     box-sizing: border-box;
 }
 
@@ -175,14 +175,15 @@ section {
     font-family: Roboto, sans-serif;
     font-weight: 200;
     font-size: 13px !important;
-    color: #333;
+    color: #fff;
     box-sizing: border-box;
+    background: #fff
 }
 
 .contato-quad-formulario-select {
     /*-webkit-appearance: none;*/
     -moz-appearance: none;
-    background: none;
+    background: #fff;
     font-family: Roboto, sans-serif;
     font-weight: 200;
     width: 100%;
@@ -210,7 +211,7 @@ select {
 }
 
 input, textarea, keygen, select, button {
-    background-color: buttonface;
+    /*background-color: buttonface;*/
     text-rendering: auto;
     color: initial;
     letter-spacing: normal;
@@ -225,7 +226,7 @@ input, textarea, keygen, select, button {
 }
 
 select:not([size]):not([multiple]), select[size="0"], select[size="1"] {
-    background-color: buttonface;
+    /*background-color: buttonface;*/
 }
 
 keygen, select, select[size="0"], select[size="1"] {
@@ -238,7 +239,9 @@ select:not(:-internal-list-box) {
 }
 
 keygen, select {
-    border-radius: 5px;
+    /*border-radius: 5px;*/
+    border: solid 1px #333;
+    margin: 10px 0 0 0;
 }
 #progress_bar {
   margin: 10px 0;

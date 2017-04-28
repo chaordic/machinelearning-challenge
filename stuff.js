@@ -42,6 +42,7 @@ function handleFileSelect(evt) {
     // Reset progress indicator on new file selection.
     progress.style.width = '0%';
     progress.textContent = '0%';
+    document.getElementById('progress_bar').style.display = 'block';
 
     reader = new FileReader();
     reader.onerror = errorHandler;
@@ -84,6 +85,7 @@ function send2AWSLambda(json) {
     progress2.style.width = '0%';
     progress2.textContent = '0%';
     document.getElementById('progress_bar2').className = 'loading';
+    document.getElementById('progress_bar2').style.display = 'block';
 
     jQuery.ajax({
         xhr: function() {

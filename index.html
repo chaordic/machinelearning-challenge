@@ -59,16 +59,16 @@
 <h2> submit your response! </h2>
     <form id="submission">
       <input type="text" name="name" placeholder="What do they call you?*" class="contato-quad-formulario first"><br>
-      <input type="text" name="email" placeholder="What's yer email, mate?*" class="contato-quad-formulario"><br><br>
+      <input type="text" name="email" placeholder="What's yer email, mate?*" class="contato-quad-formulario"><br>
       <select class="contato-quad-formulario-select" type="select" placeholder="Currently I am a(n) ________ student.*" name="education" required="required">
                 <option value="undergraduate">Currently I'm an undergraduate student.</option>
                 <option value="graduate">Currently I'm a graduate student.</option>
         </select><br><br>
     <input type="file" accept="text/csv" name="answer" id="csv"/>
-     <button type="submit">Submit!</button>
+        <button type="submit">Submit!</button>
     </form>
-    <div id="progress_bar"><div class="percent progress">0%</div></div>
-    <div id="progress_bar2"><div class="percent progress">0%</div></div><br>
+    <div id="progress_bar" style="display:none;"><div class="percent progress">0%</div></div>
+    <div id="progress_bar2" style="display:none;"><div class="percent progress">0%</div></div><br>
     <center><h3><div id="attempts" ></div><h3><br><br></center>
     <center><h3><div id="missclassificationerror" ></div><h3></center>
       </section>
