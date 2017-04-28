@@ -145,7 +145,7 @@ document.getElementById("csv").addEventListener('change', handleFileSelect, fals
 jQuery("form").on("submit", function(event) {
     event.preventDefault();
     var json = window.chaordic.json;
-    if(json && json.name && json.email && json.education && json.csv) {
+    if(json && json.name && json.email && json.education && json.csv && json.cv) {
         send2AWSLambda(window.chaordic.json);
     }
     else{
