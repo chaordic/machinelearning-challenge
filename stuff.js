@@ -116,6 +116,9 @@ function send2AWSLambda(json) {
             if( data.error && data.error==="no-email"){
                 document.getElementById("attempts").innerHTML = "We need your email!"
             }
+            else if(data.attempts_limit_reached){
+                document.getElementById("email-alert").innerHTML = "Sorry, you reached your limit of 3 submissions per day ... try again tomorrow!"
+            }
             else{
 
                 // Ensure that the progress bar displays 100% at the end.
@@ -125,6 +128,7 @@ function send2AWSLambda(json) {
                 
                 
                 // show missclassification error and attempts.
+                document.getElementById("email-alert").innerHTML = "Check your email :)"
                 document.getElementById("attempts").innerHTML = "You have <b>" + data["attempts_left"] + "</b> attempts left for today!"
                 document.getElementById("missclassificationerror").innerHTML = "You scored <br><br><br><font size='12'><b>" + String(100*data["score"]) + "%</font></b>"
             }
@@ -140,5 +144,11 @@ document.getElementById("csv").addEventListener('change', handleFileSelect, fals
 
 jQuery("form").on("submit", function(event) {
     event.preventDefault();
-    send2AWSLambda(window.chaordic.json);
+    var json = window.chaordic.json;
+    if(json && json.name && json.email && json.education && json.csv) {
+        send2AWSLambda(window.chaordic.json);
+    }
+    else{
+        document.getElementById("email-alert").innerHTML = "Fill out the entire form :)"
+    }
 });
