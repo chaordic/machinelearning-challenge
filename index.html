@@ -82,7 +82,8 @@
               <input type="text" name="name" placeholder="What do they call you?*" class="contato-quad-formulario first"><br>
               <input type="text" name="email" placeholder="What's yer email, mate?*" class="contato-quad-formulario"><br>
                 </select><br><br>
-                <center><div><button type="submit">Gimme!</button></div></center>
+                <center><div><button id="gimme-btn" type="submit" style="display:block;">Gimme!</button></div></center>
+                <center><div id="gimme-loader" class="loader" style="display:none;"></div></center>
             </form>
             <br>
             <center><h3><div id="get-data-alert" ></div><h3></center>
@@ -96,15 +97,16 @@
                 <option value="graduate">Currently I'm a graduate student.</option>
         </select><br><br>
     <div style="float:left;"><input type="file" accept="text/csv" name="answer" id="csv"/></div>
-        <div style="float:right;"><button type="submit">Submit!</button></div>
+        <div style="float:right;"><button id="submit-btn" type="submit" style="display:block;">Submit!</button></div>
+        <div style="float:right;"><div id="submit-loader" class="loader" style="display:none;"></div></div>
     </form>
     <br>
     <div id="progress_bar" style="display:none;"><div class="percent progress">0%</div></div>
     <div id="progress_bar2" style="display:none;"><div class="percent progress">0%</div></div><br>
     <center><h3><div id="email-alert" ></div><h3></center>
-    <center><h3><div id="attempts" ></div><h3><br><br></center>
+    <center><h3><div id="attempts" ></div><h3><br></center>
     <center><h3><div id="missclassificationerror" ></div><h3></center>
-
+<hr>
                   <h3 class="coral">
                     <b>F.A.Q: </b> Frequently Asked Questions
                   </h3>
@@ -118,9 +120,9 @@
                           The only thing you must have is to be regularly attending an institution of higher learning (like a university or college).<br>
                   </p>
                   <span class="chamada first-phrase">I've already graduated, but I'm enrolled in a graduate course. Can I still participate?</span> <span class="chamada"><br>
-                          Yes!<br>
+                          Yes!
                   </p>
-
+<hr>
 <center>Questions? Ping us at <b>ml-challenge@chaordic.com.br</b><br></center>
 <br>
 

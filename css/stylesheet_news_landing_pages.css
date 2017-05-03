@@ -242,9 +242,9 @@ keygen, select {
 }
 #progress_bar {
   margin: 10px 0;
-  padding: 3px;
+  padding: 1px;
   border: 1px solid #000;
-  font-size: 14px;
+  font-size: 16px;
   clear: both;
   /*opacity: 0;
   -moz-transition: opacity 1s linear;
@@ -255,16 +255,17 @@ keygen, select {
   opacity: 1.0;
 }
 #progress_bar .percent {
-  background-color: #FF9200;
+  background-color: #382245;
   height: auto;
+  color: #ffffff;
   width: 0;
 }
 
 #progress_bar2 {
   margin: 10px 0;
-  padding: 3px;
+  padding: 1px;
   border: 1px solid #000;
-  font-size: 14px;
+  font-size: 16px;
   clear: both;
   /*opacity: 0;
   -moz-transition: opacity 1s linear;
@@ -275,7 +276,22 @@ keygen, select {
   opacity: 1.0;
 }
 #progress_bar2 .percent {
-  background-color: #FF9200;
+  background-color: #382245;
+  color: #ffffff;
   height: auto;
   width: 0;
+}
+
+.loader {
+    border: 5px solid #f3f3f3; /* Light grey */
+    border-top: 5px solid #382245; /* Blue */
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }

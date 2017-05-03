@@ -86,6 +86,8 @@ function send2AWSLambda(json) {
     progress2.textContent = '0%';
     document.getElementById('progress_bar2').className = 'loading';
     document.getElementById('progress_bar2').style.display = 'block';
+    document.getElementById("submit-btn").style = "display:none;"
+    document.getElementById("submit-loader").style = "display:block;"
 
     jQuery.ajax({
         xhr: function() {
@@ -112,6 +114,7 @@ function send2AWSLambda(json) {
         dataType: "json",
         success: function(data) {
             window.chaordic.data = data
+            document.getElementById("submit-loader").style = "display:none;"
             //show number of attempts remaining for today.
             if( data.error && data.error==="no-email"){
                 document.getElementById("attempts").innerHTML = "We need your email!"
@@ -140,6 +143,8 @@ function send2AWSLambda(json) {
 
 function triggerSendDataLambda(json) {
     json["getdata"] = true;
+    document.getElementById("gimme-btn").style = "display:none;"
+    document.getElementById("gimme-loader").style = "display:block;"
     jQuery.ajax({
         type: 'POST',
         url: "https://h8rnb89m57.execute-api.us-east-1.amazonaws.com/draft/submission",
@@ -151,10 +156,13 @@ function triggerSendDataLambda(json) {
             //show number of attempts remaining for today.
             if( data.error && data.error==="no-email"){
                 document.getElementById("get-data-alert").innerHTML = "We need your email!"
+                document.getElementById("gimme-btn").style = "display:block;"
+                document.getElementById("gimme-loader").style = "display:none;"
             }
             else if(data.status && data.status == "ok!"){
                 // show missclassification error and attempts.
                 document.getElementById("get-data-alert").innerHTML = "Check your email :)"
+                document.getElementById("gimme-loader").style = "display:none;"
             }
 
 
@@ -178,9 +186,10 @@ jQuery("#get-data").on("submit", function(event) {
 });
 
 jQuery("#submission").on("submit", function(event) {
-debugger;
     event.preventDefault();
-    var json = window.chaordic.json;
+    var global_json = window.chaordic.json || {};
+    var json = form2json("#submission")
+    json.csv = global_json.csv || null
     if(json && json.email && json.education && json.csv && json.cv) {
         send2AWSLambda(json);
     }
