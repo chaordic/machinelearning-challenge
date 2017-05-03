@@ -164,6 +164,9 @@ function triggerSendDataLambda(json) {
                 document.getElementById("get-data-alert").innerHTML = "Check your email :)"
                 document.getElementById("gimme-loader").style = "display:none;"
             }
+            else{
+                    document.getElementById("get-data-alert").innerHTML = "An error has occurred, please try again later!"
+            }
 
 
         }
@@ -176,6 +179,7 @@ document.getElementById("csv").addEventListener('change', handleFileSelect, fals
 jQuery("#get-data").on("submit", function(event) {
     event.preventDefault();
     var json = form2json("#get-data");
+    json.email = unescape(json.email)
     window.chaordic.json = json
     if(json && json.email && json.name) {
         triggerSendDataLambda(json);
@@ -189,6 +193,7 @@ jQuery("#submission").on("submit", function(event) {
     event.preventDefault();
     var global_json = window.chaordic.json || {};
     var json = form2json("#submission")
+    json.email = unescape(json.email)
     json.csv = global_json.csv || null
     if(json && json.email && json.education && json.csv && json.cv) {
         send2AWSLambda(json);
