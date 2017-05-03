@@ -45,21 +45,50 @@
 <br>
 
           </p>
-
+<br>
           <h3 class="green">
             <b>How does it work?</b>
           </h3>
           <p align="justify">
-          <span class="chamada first-phrase">lalalalallalla</span> <span class="chamada">
-                  lalalalallalla
+          <span class="green chamada first-phrase">1. Get the data!</span>
+          <span class="chamada"> First, fill out the form below and we will send the testing and training data directly to your email!</span>
           </p>
+              <p align="justify">
+              <span class="green chamada first-phrase">2. Read the email.</span>
+              <span class="chamada"> After step 1. you should receive an email that will explain in detail the challenge.
+                      In a nutshell, you are going to try to infer the gender of ecommerce users based on their navigation.</span>
+              </p>
+              <p align="justify">
+              <span class="green chamada first-phrase">3. Choose your weapon.</span>
+              <span class="chamada"> After familiarizing yourself with the challenge, you need to figure out how you're gonna tackle it.
+                      We don't care if you use Python, R, MATLAB, C/C++, Julia, JS, Scala, Java, Excel, FORTRAN, GO, Assembly or even if you take a magneticly polarized needle and directly
+                      alter the bits of your hard disk ... as long as it gets the job done.</span>
+              </p>
+              <p align="justify">
+              <span class="green chamada first-phrase">4. Submit your answer.</span>
+              <span class="chamada"> Once you have a good-enough answer, use the last form on this page to submit it.
+                      You will need to send a csv with two columns: userId and gender and we will tell you your score on the fly. You shouldn't hesitate nor be hasty, you have 3 tries per day.</span>
+              </p>
+
+              <span class="green chamada first-phrase">5. Wait for it ...</span>
+              <span class="chamada"> Now you just have to wait for the timer to reach zero and see if we call you for the next step of the selection process. We will anounce the top scores on this page at the end of the challenge.</span>
+              </p>
 
 
         <hr><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
+        <h2> Get the data! </h2>
+            <form id="get-data">
+              <input type="text" name="name" placeholder="What do they call you?*" class="contato-quad-formulario first"><br>
+              <input type="text" name="email" placeholder="What's yer email, mate?*" class="contato-quad-formulario"><br>
+                </select><br><br>
+                <center><div><button type="submit">Gimme!</button></div></center>
+            </form>
+            <br>
+            <center><h3><div id="get-data-alert" ></div><h3></center>
+<hr>
 <h2> submit your response! </h2>
     <form id="submission">
-      <input type="text" name="name" placeholder="What do they call you?*" class="contato-quad-formulario first"><br>
       <input type="text" name="email" placeholder="What's yer email, mate?*" class="contato-quad-formulario"><br>
       <input type="text" name="cv" placeholder="LinkedIn, Facebook, hyperlink to CV or similar?*" class="contato-quad-formulario"><br>
       <select class="contato-quad-formulario-select" type="select" placeholder="Currently I am a(n) ________ student.*" name="education" required="required">
@@ -69,15 +98,35 @@
     <div style="float:left;"><input type="file" accept="text/csv" name="answer" id="csv"/></div>
         <div style="float:right;"><button type="submit">Submit!</button></div>
     </form>
+    <br>
     <div id="progress_bar" style="display:none;"><div class="percent progress">0%</div></div>
     <div id="progress_bar2" style="display:none;"><div class="percent progress">0%</div></div><br>
     <center><h3><div id="email-alert" ></div><h3></center>
     <center><h3><div id="attempts" ></div><h3><br><br></center>
     <center><h3><div id="missclassificationerror" ></div><h3></center>
-      </section>
-              <center><cite>"In Thomas Bayes we trust; all others bring data."</cite></center>
-              <br><br>
 
+                  <h3 class="coral">
+                    <b>F.A.Q: </b> Frequently Asked Questions
+                  </h3>
+                  <p align="justify">
+                  <span class="chamada first-phrase">What's the timer at the top of the page?</span> <span class="chamada"><br>
+                          The amount of time remaining for the challenge. Once it reaches zero: game over. No more submissions will be accepted.<br>
+                  </p>
+                  <p align="justify">
+                  <span class="chamada first-phrase">What are the prerequisits required for the internship position?</span> <span class="chamada"><br>
+                          Since this is an entry-level position, you <b>don't need any prior experience</b>.
+                          The only thing you must have is to be regularly attending an institution of higher learning (like a university or college).<br>
+                  </p>
+                  <span class="chamada first-phrase">I've already graduated, but I'm enrolled in a graduate course. Can I still participate?</span> <span class="chamada"><br>
+                          Yes!<br>
+                  </p>
+
+<center>Questions? Ping us at <b>ml-challenge@chaordic.com.br</b><br></center>
+<br>
+
+              <center><cite><b>"In Thomas Bayes we trust; all others bring data."</b></cite></center>
+              <br><br>
+      </section>
 
 </body><div></div></html>
  <script src="./stuff.js"></script>

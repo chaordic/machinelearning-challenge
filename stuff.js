@@ -61,7 +61,7 @@ function handleFileSelect(evt) {
         progress.textContent = "Uploading file (DONE)";
         setTimeout("document.getElementById('progress_bar').className='';", 2000);
 
-        var json = form2json("form");
+        var json = form2json("#submission");
         json["csv"] = content;
         window.chaordic.json = json;
     }
@@ -107,7 +107,7 @@ function send2AWSLambda(json) {
         },
         type: 'POST',
         url: "https://h8rnb89m57.execute-api.us-east-1.amazonaws.com/draft/submission",
-        data: JSON.stringify(window.chaordic.json),
+        data: JSON.stringify(json),
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function(data) {
@@ -125,8 +125,8 @@ function send2AWSLambda(json) {
                 progress2.style.width = '100%';
                 progress2.textContent = "Sending response (DONE)";
                 setTimeout("document.getElementById('progress_bar2').className='';", 100);
-                
-                
+
+
                 // show missclassification error and attempts.
                 document.getElementById("email-alert").innerHTML = "Check your email :)"
                 document.getElementById("attempts").innerHTML = "You have <b>" + data["attempts_left"] + "</b> attempts left for today!"
@@ -138,15 +138,51 @@ function send2AWSLambda(json) {
     });
 }
 
+function triggerSendDataLambda(json) {
+    json["getdata"] = true;
+    jQuery.ajax({
+        type: 'POST',
+        url: "https://h8rnb89m57.execute-api.us-east-1.amazonaws.com/draft/submission",
+        data: JSON.stringify(json),
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function(data) {
+            window.chaordic.data_getdata = data
+            //show number of attempts remaining for today.
+            if( data.error && data.error==="no-email"){
+                document.getElementById("get-data-alert").innerHTML = "We need your email!"
+            }
+            else if(data.status && data.status == "ok!"){
+                // show missclassification error and attempts.
+                document.getElementById("get-data-alert").innerHTML = "Check your email :)"
+            }
+
+
+        }
+    });
+}
 
 // listen for filelist updates.
 document.getElementById("csv").addEventListener('change', handleFileSelect, false);
 
-jQuery("form").on("submit", function(event) {
+jQuery("#get-data").on("submit", function(event) {
+    event.preventDefault();
+    var json = form2json("#get-data");
+    window.chaordic.json = json
+    if(json && json.email && json.name) {
+        triggerSendDataLambda(json);
+    }
+    else{
+        document.getElementById("get-data-alert").innerHTML = "Fill out the entire form :)"
+    }
+});
+
+jQuery("#submission").on("submit", function(event) {
+debugger;
     event.preventDefault();
     var json = window.chaordic.json;
-    if(json && json.name && json.email && json.education && json.csv && json.cv) {
-        send2AWSLambda(window.chaordic.json);
+    if(json && json.email && json.education && json.csv && json.cv) {
+        send2AWSLambda(json);
     }
     else{
         document.getElementById("email-alert").innerHTML = "Fill out the entire form :)"
