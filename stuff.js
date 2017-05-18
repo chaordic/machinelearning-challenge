@@ -133,7 +133,7 @@ function send2AWSLambda(json) {
                 // show missclassification error and attempts.
                 document.getElementById("email-alert").innerHTML = "Check your email :)"
                 document.getElementById("attempts").innerHTML = "You have <b>" + data["attempts_left"] + "</b> attempts left for today!"
-                document.getElementById("missclassificationerror").innerHTML = "You scored <br><br><br><font size='12'><b>" + String(100*data["score"]) + "%</font></b>"
+                document.getElementById("missclassificationerror").innerHTML = "You scored <br><br><br><font size='12'><b>" + String(data["score"]) + "%</font></b>"
             }
 
 
